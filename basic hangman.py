@@ -1,6 +1,6 @@
 import random
 import string
-word_list = ["cat", "baby", "camel", "momo", "sweet"]
+word_list = ["dog", "animal", "cake", "chocolate", "pencil"]
 chosen_word=random.choice(word_list)
 
 list_chosen_word=[]
@@ -36,3 +36,7 @@ while(counter>0):
     print(list_of_bs)
     counter-=1
     print(f"You lost a life. You now have {counter} chances left.")
+    if (counter==0):
+      print('You LOSE :(')
+      print(f'The word was {chosen_word}')
+
