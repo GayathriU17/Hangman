@@ -1,6 +1,6 @@
 import random
 import string
-word_list = ["chakkara", "baby", "camel", "momo", "sweetie"]
+word_list = ["cat", "baby", "camel", "momo", "sweet"]
 chosen_word=random.choice(word_list)
 
 list_chosen_word=[]
