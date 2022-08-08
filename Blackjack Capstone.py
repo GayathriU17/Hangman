@@ -27,14 +27,14 @@ while(ch1=='y'):
     def add_cards_user(sum_u):
         new_card=random.choices(cards_list, k=1)[0]
         sum_u=sum_u+new_card
-        print(new_card)
+        print(f"Your next card: {new_card}")
         return sum_u
 
     def add_cards_computer(sum_c):
-        if (sum_c<21):
+        if (sum_c<18):
             new_card_computer=random.choices(cards_list, k=1)[0]
             sum_c=sum_c+new_card_computer
-            print(new_card_computer)
+            print(f"Computer's next card: {new_card_computer}")
         return sum_c
 
     def check(s1,s2):
@@ -44,6 +44,8 @@ while(ch1=='y'):
         elif(s2>21 and s1>21):
             print('DRAW!!')
             return True
+        elif(s2>21):
+            print('You WIN!!')
         elif(s1==s2):
             print('DRAW!!')
             return True
