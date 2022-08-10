@@ -1,5 +1,3 @@
-# Blackjack Capstone
-#print statements
 from art import logo
 import random
 
@@ -37,6 +35,20 @@ while(ch1=='y'):
             print(f"Computer's next card: {new_card_computer}")
         return sum_c
 
+    def check1(s1,s2):
+        if(s1>21):
+            return True
+        elif(s2>21 and s1>21):
+            return True
+        elif(s2>21):
+            return True
+        elif(s1==s2):
+            return True
+        if (s1==21 and s2!=21):
+            return True
+        elif(s2==21 and s1!=21):
+            return True
+  
     def check(s1,s2):
         if(s1>21):
             print('You LOSE!!')
@@ -46,6 +58,7 @@ while(ch1=='y'):
             return True
         elif(s2>21):
             print('You WIN!!')
+            return True
         elif(s1==s2):
             print('DRAW!!')
             return True
@@ -61,14 +74,14 @@ while(ch1=='y'):
         elif(s2>s1 and s2<21):
             print('You LOSE!!')  
             return True
-  
-    
+
     ch2=input('Do you want to add another card?')
     while(ch2=='y'):
         s1=add_cards_user(sum_u)
         s2=add_cards_computer(sum_c)
-        y=check(s1,s2)
+        y=check1(s1,s2)
         if(y==True):
+            check(sum_u,s2) 
             break
         else:
             ch2=input('Do you want to add another card?')
@@ -78,13 +91,3 @@ while(ch1=='y'):
     ch1=input("Would you like to play another round? Press 'y' to continue.")
 else:
     print('END GAME!!')
-   
-   
-          
-
-
-
-
-
-
-
